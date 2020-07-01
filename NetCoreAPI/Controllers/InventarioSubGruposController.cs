@@ -4,19 +4,28 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using NetCoreAPI.Entities.Models;
+using NetCoreAPI.Models;
 using NetCoreAPI.Services;
 
 namespace NetCoreAPI.Controllers
 {
     [Route("api/v1/NetCoreAPI/[controller]")]
-    public class InvGrp1Controller : Controller
+
+    public class InventarioSubGruposController : Controller
     {
-        private NetCoreAPIContext _context = new NetCoreAPIContext();
-        private UnitOfWork _unitOfWork = new UnitOfWork(new NetCoreAPIContext());
+        //private UnitOfWork _unitOfWork = new UnitOfWork(new NetCoreAPIContext());
+        public AppSettings _settings;
+        private UnitOfWork _unitOfWork;
+        public InventarioSubGruposController(IOptions<AppSettings> Configuration)
+        {
+            _settings = Configuration.Value;
+            _unitOfWork = new UnitOfWork(new NetCoreAPIContext(_settings.ConnectionString));
+        }
 
         [HttpGet]
-        public IActionResult GetAllInvGrp1()
+        public IActionResult GetAllSubGrupos()
         {
             var invGrp1 = _unitOfWork.inv_grp1.Get();
 
@@ -33,29 +42,36 @@ namespace NetCoreAPI.Controllers
         [HttpGet("id")]
         public IActionResult GetById(int id)
         {
-            InvGrp1 invGrp1 = _unitOfWork.inv_grp1.GetById(id);
-
-            if (invGrp1 != null)
+            if (id != 0)
             {
-                return Ok(invGrp1);
+                var invGrp1 = _unitOfWork.inv_grp1.GetById(id);
+
+                if (invGrp1 != null)
+                {
+                    return Ok(invGrp1);
+                }
+                else
+                    return BadRequest();                
             }
             else
-            {
-                return BadRequest("No se ha encontrado un registro");
-            }
+                return BadRequest();
         }
 
         [HttpPut]
-        public IActionResult UpdateUser([FromBody]InvGrp1 invGrp1)
+        public IActionResult UpdateCreateSubGrupo([FromBody]InvGrp1 invGrp1)
         {
             try 
             {
                 if (ModelState.IsValid)
                 {
-                    _unitOfWork.inv_grp1.Update(invGrp1);
+                    if (invGrp1.Key1 != 0)
+                        _unitOfWork.inv_grp1.Update(invGrp1);
+                    else
+                        _unitOfWork.inv_grp1.Insert(invGrp1);
+
                     _unitOfWork.Save();
 
-                    return Ok();
+                    return Ok(invGrp1);
                 }
                 else
                     return BadRequest();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CarlosxJose\\source\\repos\\ServicesAPI\\NetCoreAPI\\NetCoreAPI.csproj": {}
+    "C:\\Users\\CarlosxJose\\source\\repos\\carlosxjose\\NetCoreApi\\NetCoreAPI\\NetCoreAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CarlosxJose\\source\\repos\\ServicesAPI\\NetCoreAPI\\NetCoreAPI.csproj": {
+    "C:\\Users\\CarlosxJose\\source\\repos\\carlosxjose\\NetCoreApi\\NetCoreAPI\\NetCoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CarlosxJose\\source\\repos\\ServicesAPI\\NetCoreAPI\\NetCoreAPI.csproj",
+        "projectUniqueName": "C:\\Users\\CarlosxJose\\source\\repos\\carlosxjose\\NetCoreApi\\NetCoreAPI\\NetCoreAPI.csproj",
         "projectName": "NetCoreAPI",
-        "projectPath": "C:\\Users\\CarlosxJose\\source\\repos\\ServicesAPI\\NetCoreAPI\\NetCoreAPI.csproj",
+        "projectPath": "C:\\Users\\CarlosxJose\\source\\repos\\carlosxjose\\NetCoreApi\\NetCoreAPI\\NetCoreAPI.csproj",
         "packagesPath": "C:\\Users\\CarlosxJose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CarlosxJose\\source\\repos\\ServicesAPI\\NetCoreAPI\\obj\\",
+        "outputPath": "C:\\Users\\CarlosxJose\\source\\repos\\carlosxjose\\NetCoreApi\\NetCoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
