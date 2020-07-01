@@ -9,13 +9,17 @@ namespace NetCoreAPI.Entities.Models
 {
     public partial class NetCoreAPIContext : DbContext
     {
-        private string _conexion { get; }
+        private string _conexion = "Server = tcp:carlosxjose.database.windows.net,1433; Initial Catalog = NetCoreApi; Persist Security Info = False; User ID = carlos; Password =12qwasZX; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";//{ get; }
 
-        public NetCoreAPIContext(string conexion)
-        {
-            _conexion = conexion;
+        //  bugs no funciona ???
+        //public NetCoreAPIContext(string conexion)
+        //{
+        //    _conexion = conexion;
+        //}
+
+        public NetCoreAPIContext()
+        { 
         }
-
         public NetCoreAPIContext(DbContextOptions<NetCoreAPIContext> options)
             : base(options)
         {
@@ -28,8 +32,8 @@ namespace NetCoreAPI.Entities.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(_conexion);//"Server=.; Database=NetCoreAPI;Trusted_Connection=True;");
+            {                
+                optionsBuilder.UseSqlServer(_conexion);
             }
         }
 

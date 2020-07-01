@@ -20,7 +20,7 @@ namespace NetCoreAPI.Controllers
         public InventarioMaestroController(IOptions<AppSettings> Configuration)
         {
             _settings = Configuration.Value;
-            _unitOfWork = new UnitOfWork(new NetCoreAPIContext(_settings.ConnectionString));
+            _unitOfWork = new UnitOfWork(new NetCoreAPIContext());// _settings.ConnectionString));
         }
 
         [HttpGet]

@@ -21,7 +21,7 @@ namespace NetCoreAPI.Controllers
         public InventarioSubGruposController(IOptions<AppSettings> Configuration)
         {
             _settings = Configuration.Value;
-            _unitOfWork = new UnitOfWork(new NetCoreAPIContext(_settings.ConnectionString));
+            _unitOfWork = new UnitOfWork(new NetCoreAPIContext());// _settings.ConnectionString));
         }
 
         [HttpGet]

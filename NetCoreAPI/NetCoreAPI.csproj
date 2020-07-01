@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>d8eab4a9-d3f1-43d8-bd70-3b4ec2873e8d</UserSecretsId>
   </PropertyGroup>
 <ItemGroup>
   <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">

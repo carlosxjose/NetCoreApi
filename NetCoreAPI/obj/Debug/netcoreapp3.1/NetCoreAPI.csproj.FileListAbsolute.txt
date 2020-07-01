@@ -284,3 +284,5 @@ C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\ne
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.pdb
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.genruntimeconfig.cache
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.csprojAssemblyReference.cache
+C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
