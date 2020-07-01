@@ -9,16 +9,16 @@ APIs disponibles:
 https://denariusapi.azurewebsites.net/api/v1/denariusapi/Inventariosubgrupo
 
 CRUD API
-https://denariusapi.azurewebsites.net/api/v1/denariusapi/Inventariosubgrupo    Put Insert
-https://denariusapi.azurewebsites.net/api/v1/denariusapi/Inventariosubgrupo/id Get Select
-https://denariusapi.azurewebsites.net/api/v1/denariusapi/Inventariosubgrupo/id Put Update
-https://denariusapi.azurewebsites.net/api/v1/denariusapi/Inventariosubgrupo/id Delete
+https://denariusapi.azurewebsites.net/api/v1/NetCoreAPI/Inventariosubgrupos    Put Insert
+https://denariusapi.azurewebsites.net/api/v1/NetCoreAPI/Inventariosubgrupos/id Get Select
+https://denariusapi.azurewebsites.net/api/v1/NetCoreAPI/Inventariosubgrupos/id Put Update
+https://denariusapi.azurewebsites.net/api/v1/NetCoreAPI/Inventariosubgrupos/id Delete
 
 -Maestro de articulos
 https://denariusapi.azurewebsites.net/api/v1/denariusapi/InventarioMaestro
 
 CRUD API
-https://denariusapi.azurewebsites.net/api/v1/denariusapi/InventarioMaestro    Put Insert
-https://denariusapi.azurewebsites.net/api/v1/denariusapi/InventarioMaestro/id Get Select
-https://denariusapi.azurewebsites.net/api/v1/denariusapi/InventarioMaestro/id Put Update
-https://denariusapi.azurewebsites.net/api/v1/denariusapi/InventarioMaestro/id Delete
+https://denariusapi.azurewebsites.net/api/v1/NetCoreAPI/InventarioMaestro    Put Insert
+https://denariusapi.azurewebsites.net/api/v1/NetCoreAPI/InventarioMaestro/id Get Select
+https://denariusapi.azurewebsites.net/api/v1/NetCoreAPI/InventarioMaestro/id Put Update
+https://denariusapi.azurewebsites.net/api/v1/NetCoreAPI/InventarioMaestro/id Delete
