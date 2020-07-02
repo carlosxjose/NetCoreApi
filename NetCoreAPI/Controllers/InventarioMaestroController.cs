@@ -15,13 +15,7 @@ namespace NetCoreAPI.Controllers
     [Route("api/v1/NetCoreAPI/[controller]")]
     public class InventarioMaestroController : Controller
     {
-        public AppSettings _settings;
-        private UnitOfWork _unitOfWork;
-        public InventarioMaestroController(IOptions<AppSettings> Configuration)
-        {
-            _settings = Configuration.Value;
-            _unitOfWork = new UnitOfWork(new NetCoreAPIContext());// _settings.ConnectionString));
-        }
+        private UnitOfWork _unitOfWork = new UnitOfWork(new NetCoreAPIContext());        
 
         [HttpGet]
         public IActionResult GetAllMaestro()

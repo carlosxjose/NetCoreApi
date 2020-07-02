@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using NetCoreAPI.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using System.Net.NetworkInformation;
 
 namespace NetCoreAPI.Entities.Models
 {
@@ -11,11 +12,10 @@ namespace NetCoreAPI.Entities.Models
     {
         private string _conexion = "Server = tcp:carlosxjose.database.windows.net,1433; Initial Catalog = NetCoreApi; Persist Security Info = False; User ID = carlos; Password =12qwasZX; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";//{ get; }
 
-        //  bugs no funciona ???
-        //public NetCoreAPIContext(string conexion)
-        //{
-        //    _conexion = conexion;
-        //}
+        public static string GetConnectionString()
+        {
+            return Startup.ConnectionString;
+        }
 
         public NetCoreAPIContext()
         { 
@@ -32,8 +32,8 @@ namespace NetCoreAPI.Entities.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {                
-                optionsBuilder.UseSqlServer(_conexion);
+            {
+                optionsBuilder.UseSqlServer(_conexion);//GetConnectionString());
             }
         }
 

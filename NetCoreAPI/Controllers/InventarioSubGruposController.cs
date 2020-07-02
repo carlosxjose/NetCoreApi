@@ -15,14 +15,7 @@ namespace NetCoreAPI.Controllers
 
     public class InventarioSubGruposController : Controller
     {
-        //private UnitOfWork _unitOfWork = new UnitOfWork(new NetCoreAPIContext());
-        public AppSettings _settings;
-        private UnitOfWork _unitOfWork;
-        public InventarioSubGruposController(IOptions<AppSettings> Configuration)
-        {
-            _settings = Configuration.Value;
-            _unitOfWork = new UnitOfWork(new NetCoreAPIContext());// _settings.ConnectionString));
-        }
+        private UnitOfWork _unitOfWork = new UnitOfWork(new NetCoreAPIContext());        
 
         [HttpGet]
         public IActionResult GetAllSubGrupos()
