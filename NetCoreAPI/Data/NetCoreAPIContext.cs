@@ -10,7 +10,7 @@ namespace NetCoreAPI.Entities.Models
 {
     public partial class NetCoreAPIContext : DbContext
     {
-        private string _conexion = "Server = tcp:carlosxjose.database.windows.net,1433; Initial Catalog = NetCoreApi; Persist Security Info = False; User ID = carlos; Password =12qwasZX; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";//{ get; }
+        private string _conexion = "";
 
         public static string GetConnectionString()
         {
@@ -33,7 +33,7 @@ namespace NetCoreAPI.Entities.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(_conexion);//GetConnectionString());
+                optionsBuilder.UseSqlServer(GetConnectionString());
             }
         }
 
