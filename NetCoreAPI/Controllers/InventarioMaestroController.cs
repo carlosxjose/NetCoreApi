@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -49,7 +50,7 @@ namespace NetCoreAPI.Controllers
             else
                 return BadRequest();
         }
-
+        [HttpPost]
         [HttpPut]
         public IActionResult UpdateCreateMaestro([FromBody]InvMaster m)
         {
@@ -67,7 +68,7 @@ namespace NetCoreAPI.Controllers
                     return Ok(m);
                 }
                 else
-                    return BadRequest();
+                return BadRequest(ModelState);
             }
             catch (DataException ex)
             {

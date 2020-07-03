@@ -260,8 +260,6 @@ C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\ne
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.AssemblyInfoInputs.cache
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.AssemblyInfo.cs
-C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.csproj.CoreCompileInputs.cache
-C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.RazorAssemblyInfo.cache
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.RazorAssemblyInfo.cs
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.TagHelpers.input.cache
@@ -288,3 +286,5 @@ C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\ne
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.csprojAssemblyReference.cache
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.DenariusAPI - Web Deploy.json
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.DenariusAPI - Web Deploy1.json
+C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.csproj.CoreCompileInputs.cache
+C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.MvcApplicationPartsAssemblyInfo.cache

@@ -49,7 +49,7 @@ namespace NetCoreAPI.Controllers
             else
                 return BadRequest();
         }
-
+        [HttpPost]
         [HttpPut]
         public IActionResult UpdateCreateSubGrupo([FromBody]InvGrp1 invGrp1)
         {
