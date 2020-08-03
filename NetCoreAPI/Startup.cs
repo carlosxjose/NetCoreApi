@@ -1,35 +1,38 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.CodeAnalysis.Options;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NetCoreAPI.Entities.Models;
-using NetCoreAPI.Models;
-using Newtonsoft.Json;
+using Microsoft.Extensions.Options;
+using NetCoreAPI.Middlewares;
+using System;
+using System.Net.NetworkInformation;
 
 namespace NetCoreAPI
 {
     public class Startup
     {
         public IConfiguration Configuration { get; }
+        public static string ConnectionString { get; private set; }
+        public static string ConnectionStringAut { get; private set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-        public static string ConnectionString { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();    
+            services.AddControllersWithViews();
+
+            Action<Entities.DTOs.Configurations> Config = (cf =>
+            {
+                cf.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
+                cf.ConnectionStringAut = Configuration.GetConnectionString("DefaultConnectionA");
+            });
+            services.Configure(Config);
+            services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<Entities.DTOs.Configurations>>().Value);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +56,10 @@ namespace NetCoreAPI
             app.UseAuthorization();
 
             ConnectionString = Configuration.GetConnectionString("DefaultConnection");
-            
+            ConnectionStringAut = Configuration.GetConnectionString("DefaultConnectionAut");
+
+            //app.UseMiddleware<BasicAuthMiddleware>("example.com");
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

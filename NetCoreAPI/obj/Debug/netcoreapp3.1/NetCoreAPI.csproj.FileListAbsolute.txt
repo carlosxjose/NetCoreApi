@@ -144,6 +144,10 @@ C:\Users\CarlosxJose\source\repos\ServicesAPI\NetCoreAPI\obj\Debug\netcoreapp3.1
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.DenariusAPI - Web Deploy.json
+C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.DenariusAPI - Web Deploy1.json
+C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\NetCoreAPI.exe
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\NetCoreAPI.deps.json
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\NetCoreAPI.runtimeconfig.json
@@ -281,10 +285,6 @@ C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\ne
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.dll
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.pdb
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.genruntimeconfig.cache
-C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.csprojAssemblyReference.cache
-C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.DenariusAPI - Web Deploy.json
-C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.DenariusAPI - Web Deploy1.json
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.csproj.CoreCompileInputs.cache
 C:\Users\CarlosxJose\source\repos\carlosxjose\NetCoreApi\NetCoreAPI\obj\Debug\netcoreapp3.1\NetCoreAPI.MvcApplicationPartsAssemblyInfo.cache

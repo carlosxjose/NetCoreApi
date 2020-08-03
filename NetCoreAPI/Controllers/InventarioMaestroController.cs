@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using NetCoreAPI.Entities.Models;
@@ -13,12 +14,14 @@ using Newtonsoft.Json;
 
 namespace NetCoreAPI.Controllers
 {
+    [BasicAuthorize("my-example-realm.com")]
     [Route("api/v1/NetCoreAPI/[controller]")]
     public class InventarioMaestroController : Controller
     {
-        private UnitOfWork _unitOfWork = new UnitOfWork(new NetCoreAPIContext());        
+        private UnitOfWork _unitOfWork = new UnitOfWork(new Data.DenariusAPIContext());        
 
         [HttpGet]
+        //[Authorize]
         public IActionResult GetAllMaestro()
         {
             var invMaster = _unitOfWork.inv_master.Get();
@@ -38,7 +41,7 @@ namespace NetCoreAPI.Controllers
         {
             if (id != 0)
             {
-                var maestro = _unitOfWork.inv_master.Get(x => x.Key1 == id);
+                var maestro = _unitOfWork.inv_master.Get(x => x.key1 == id);
 
                 if (maestro != null)
                 {
@@ -52,13 +55,13 @@ namespace NetCoreAPI.Controllers
         }
         [HttpPost]
         [HttpPut]
-        public IActionResult UpdateCreateMaestro([FromBody]InvMaster m)
+        public IActionResult UpdateCreateMaestro([FromBody]inv_master m)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    if (m.Key1 != 0)
+                    if (m.key1 != 0)
                         _unitOfWork.inv_master.Update(m);
                     else
                         _unitOfWork.inv_master.Insert(m);

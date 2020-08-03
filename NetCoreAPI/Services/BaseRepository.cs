@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
+using NetCoreAPI.Data;
 using NetCoreAPI.Entities.Models;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,10 @@ namespace NetCoreAPI.Services
 {
     public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        internal NetCoreAPIContext context;
+        internal DenariusAPIContext context;
         internal DbSet<TEntity> dbset;
 
-        public BaseRepository(NetCoreAPIContext context)
+        public BaseRepository(DenariusAPIContext context)
         {
             this.context = context;
             this.dbset = context.Set<TEntity>();

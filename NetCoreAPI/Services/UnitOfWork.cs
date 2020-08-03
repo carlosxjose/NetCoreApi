@@ -1,4 +1,5 @@
-﻿using NetCoreAPI.Entities.Models;
+﻿using NetCoreAPI.Data;
+using NetCoreAPI.Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,35 +9,35 @@ namespace NetCoreAPI.Services
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private NetCoreAPIContext _context;
-        private BaseRepository<InvMaster> _invMaster;
-        private BaseRepository<InvGrp1> _invGrp1;
-        private BaseRepository<InvMasterAud> _invMasterAud;
+        private DenariusAPIContext _context;
+        private BaseRepository<inv_master> _invMaster;
+        private BaseRepository<inv_grp1> _invGrp1;
+        private BaseRepository<inv_master_aud> _invMasterAud;
 
-        public UnitOfWork(NetCoreAPIContext dbcontext)
+        public UnitOfWork(DenariusAPIContext dbcontext)
         {
             _context = dbcontext;
         }
 
-        public IRepository<InvMaster> inv_master
+        public IRepository<inv_master> inv_master
         {
             get
             {
-                return _invMaster ??= new BaseRepository<InvMaster>(_context);
+                return _invMaster ??= new BaseRepository<inv_master>(_context);
             }
         }
-        public IRepository<InvGrp1> inv_grp1
+        public IRepository<inv_grp1> inv_grp1
         {
             get
             {
-                return _invGrp1 ??= new BaseRepository<InvGrp1>(_context);
+                return _invGrp1 ??= new BaseRepository<inv_grp1>(_context);
             }
         }
-        public IRepository<InvMasterAud> inv_master_aud
+        public IRepository<inv_master_aud> inv_master_aud
         {
             get
             {
-                return _invMasterAud ??= new BaseRepository<InvMasterAud>(_context);
+                return _invMasterAud ??= new BaseRepository<inv_master_aud>(_context);
             }
         }
         public void Save()
@@ -44,9 +45,9 @@ namespace NetCoreAPI.Services
             _context.SaveChanges();
         }
 
-        IRepository<InvMaster> IUnitOfWork.inv_master { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        IRepository<InvGrp1> IUnitOfWork.inv_grp1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        IRepository<InvMasterAud> IUnitOfWork.inv_master_aud { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        IRepository<inv_master> IUnitOfWork.inv_master { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        IRepository<inv_grp1> IUnitOfWork.inv_grp1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        IRepository<inv_master_aud> IUnitOfWork.inv_master_aud { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     }
 }
