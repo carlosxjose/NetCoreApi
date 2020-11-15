@@ -65,23 +65,19 @@ namespace NetCoreAPI
             context.Result = new UnauthorizedResult();
         }
 
-        // Make your own implementation of this
         public bool IsAuthorized(string username, string password)
         {
-
-        //    _configuration.usuario = username;
-        //    _configuration.password = username;
-
             string ConnectionStringAut = string.Format(Startup.ConnectionStringAut, username, password);
             
             var db = new DenariusAPIContext(ConnectionStringAut);
 
             try 
             {
-                // se debe buscar el ID del usuario y el nivel
-                var y = db.inv_master.Count();
+                var x = db.mps_usuarios.FirstOrDefault(p => p.identificacion.Trim().ToLower() == username.ToLower() && p.nivel > 0);
 
-                return true;
+                // Pendiente asignar el key1 del usuario
+                if (x != null)                
+                    return true;                
             }
             catch 
             {

@@ -21,7 +21,6 @@ namespace NetCoreAPI.Controllers
         private UnitOfWork _unitOfWork = new UnitOfWork(new Data.DenariusAPIContext());        
 
         [HttpGet]
-        //[Authorize]
         public IActionResult GetAllMaestro()
         {
             var invMaster = _unitOfWork.inv_master.Get();
@@ -53,6 +52,7 @@ namespace NetCoreAPI.Controllers
             else
                 return BadRequest();
         }
+
         [HttpPost]
         [HttpPut]
         public IActionResult UpdateCreateMaestro([FromBody]inv_master m)

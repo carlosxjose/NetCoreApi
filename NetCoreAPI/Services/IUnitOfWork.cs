@@ -11,6 +11,7 @@ namespace NetCoreAPI.Services
         IRepository<inv_master> inv_master { get; set; }
         IRepository<inv_grp1> inv_grp1 { get; set; }
         IRepository<inv_master_aud> inv_master_aud { get; set; }
+        IRepository<mps_usuarios> mps_usuarios { get; set; }
 
         void Save();
     }

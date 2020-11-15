@@ -13,6 +13,7 @@ namespace NetCoreAPI.Services
         private BaseRepository<inv_master> _invMaster;
         private BaseRepository<inv_grp1> _invGrp1;
         private BaseRepository<inv_master_aud> _invMasterAud;
+        private BaseRepository<mps_usuarios> _mpsUsuarios;
 
         public UnitOfWork(DenariusAPIContext dbcontext)
         {
@@ -40,6 +41,15 @@ namespace NetCoreAPI.Services
                 return _invMasterAud ??= new BaseRepository<inv_master_aud>(_context);
             }
         }
+
+        public IRepository<mps_usuarios> mps_usuario
+        {
+            get
+            {
+                return _mpsUsuarios ??= new BaseRepository<mps_usuarios>(_context);
+            }
+        }
+
         public void Save()
         {
             _context.SaveChanges();
@@ -48,6 +58,8 @@ namespace NetCoreAPI.Services
         IRepository<inv_master> IUnitOfWork.inv_master { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         IRepository<inv_grp1> IUnitOfWork.inv_grp1 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         IRepository<inv_master_aud> IUnitOfWork.inv_master_aud { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        IRepository<mps_usuarios> IUnitOfWork.mps_usuarios { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     }
 }

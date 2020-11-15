@@ -42,6 +42,7 @@ namespace NetCoreAPI.Data
         public virtual DbSet<inv_grp1> inv_grp1 { get; set; }
         public virtual DbSet<inv_master> inv_master { get; set; }
         public virtual DbSet<inv_master_aud> inv_master_aud { get; set; }
+        public virtual DbSet<mps_usuarios> mps_usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -99,32 +100,32 @@ namespace NetCoreAPI.Data
                     .HasName("PK_Inv_Mast");
 
                 entity.HasIndex(e => e.codigo)
-                    .HasName("IX_inv_master")
+                    .HasDatabaseName("IX_inv_master")
                     .IsUnique();
 
                 entity.HasIndex(e => e.id_cod_control)
-                    .HasName("IX_inv_master_1");
+                .HasDatabaseName("IX_inv_master_1");
 
                 entity.HasIndex(e => new { e.key1, e.tipo, e.codigo, e.nombre_f, e.referencia, e.precio_r, e.sts_nulo })
-                    .HasName("IX_inv_master_2");
+                    .HasDatabaseName("IX_inv_master_2");
 
                 entity.HasIndex(e => new { e.tipo, e.codigo, e.nombre_f, e.referencia, e.precio_r, e.sts_pos, e.sts_nulo })
-                    .HasName("IX_inv_master_3");
+                    .HasDatabaseName("IX_inv_master_3");
 
                 entity.HasIndex(e => new { e.key1, e.codigo, e.nombre_f, e.referencia, e.costo_pro, e.precio_e, e.precio_r, e.tipo, e.sts_nulo })
-                    .HasName("IX_inv_master_5");
+                    .HasDatabaseName("IX_inv_master_5");
 
                 entity.HasIndex(e => new { e.tipo, e.codigo, e.nombre_f, e.nombre_s, e.referencia, e.id_marca, e.id_suplidor, e.id_ubica_a, e.id_ubica_g, e.id_grp1 })
-                    .HasName("IX_inv_master_7");
+                    .HasDatabaseName("IX_inv_master_7");
 
                 entity.HasIndex(e => new { e.codigo, e.nombre_f, e.referencia, e.id_marca, e.id_unidad, e.id_ubica_a, e.id_ubica_g, e.precio_r, e.porcReg, e.id_itbis, e.id_grp1 })
-                    .HasName("IX_inv_master_6");
+                    .HasDatabaseName("IX_inv_master_6");
 
                 entity.HasIndex(e => new { e.key1, e.tipo, e.codigo, e.nombre_f, e.nombre_s, e.referencia, e.id_marca, e.id_suplidor, e.id_ubica_a, e.id_ubica_g, e.id_grp1 })
-                    .HasName("IX_inv_master_4");
+                    .HasDatabaseName("IX_inv_master_4");
 
                 entity.HasIndex(e => new { e.tipo, e.codigo, e.nombre_f, e.referencia, e.id_grp1, e.id_marca, e.id_suplidor, e.id_ubica_a, e.id_ubica_g, e.costo_pro, e.precio_m, e.precio_e, e.precio_r, e.porcMin, e.porcEsp, e.porcReg, e.id_cod_control, e.itbis, e.id_itbis, e.sts_especial, e.sts_nodescto, e.sts_soloinsumo, e.sts_consignacion, e.sts_noinv, e.sts_nulo })
-                    .HasName("IX_inv_master_8");
+                    .HasDatabaseName("IX_inv_master_8");
 
                 entity.Property(e => e.ancho).HasColumnType("numeric(10, 4)");
 
@@ -318,6 +319,36 @@ namespace NetCoreAPI.Data
                     .HasMaxLength(30)
                     .IsUnicode(false)
                     .HasDefaultValueSql("(suser_sname())");
+            });
+
+            modelBuilder.Entity<mps_usuarios>(entity =>
+            {
+                entity.HasKey(e => e.key1)
+                    .HasName("PK_usuarios");
+
+                //entity.HasIndex(e => e.identificacion)
+                //    .HasName("IX_mps_usuarios")
+                //    .IsUnique();
+
+                entity.Property(e => e.identificacion)
+                    .IsRequired()
+                    .HasMaxLength(25)
+                    .IsUnicode(false)
+                    .IsFixedLength();
+
+                entity.Property(e => e.nivel).HasDefaultValueSql("('00')");
+
+                entity.Property(e => e.notas).HasColumnType("text");
+
+                entity.Property(e => e.programa0)
+                    .HasMaxLength(2)
+                    .IsUnicode(false)
+                    .IsFixedLength();
+
+                entity.Property(e => e.supKey)
+                    .HasMaxLength(14)
+                    .IsUnicode(false)
+                    .IsFixedLength();
             });
 
             OnModelCreatingPartial(modelBuilder);
